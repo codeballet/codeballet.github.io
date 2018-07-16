@@ -1,0 +1,767 @@
+body{
+  /*background: linear-gradient(#c3c7d6, #e1f9fb, #fde3d9);*/
+  font-family: 'Caveat', cursive, sans-serif;
+  color: #FFFFFF;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1{
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+p{
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+footer{
+  font-size: 1rem;
+  margin-left: 15px;
+  padding: 10px;
+}
+
+ul a{
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+a:hover{
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.container{
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  background-image: url(../images/runesDark.jpg);
+  background-size: auto;
+  background-position: center;
+  background-color: #333333;
+}
+
+.indexBack{
+  background-image: url(../images/poster.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: #333333;
+}
+
+.indexMain{
+  display: grid;
+  margin-top: 10vh;
+  height: 50vh;
+}
+
+.wrapper, .wrapperCredits, .wrapperGallery{
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1rem;
+}
+
+.introImage1 img, .introImage2 img, .introImage3 img, .introImage4 img, .introImage5 img{
+  width: 60%;
+}
+
+.introImage1{
+  display: grid;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  justify-items: center;
+}
+
+.introImage2{
+  display: grid;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  justify-items: center;
+}
+
+.introImage3{
+  display: grid;
+  grid-row-start: 7;
+  grid-row-end: 8;
+  justify-items: center;
+}
+
+.introImage4{
+  display: grid;
+  grid-row-start: 9;
+  grid-row-end: 10;
+  justify-items: center;
+}
+
+.introImage5{
+  display: grid;
+  grid-row-start: 11;
+  grid-row-end: 12;
+  justify-items: center;
+}
+
+.sponsorImages{
+    display: grid;
+    grid-template-columns: 100px;
+    grid-auto-rows: minmax(30px, auto);
+    row-gap: 1rem;
+}
+
+.sponsorImage1, .sponsorImage2, .sponsorImage3, .sponsorImage4{
+  max-width: 100px;
+}
+
+.centerItem{
+  display: grid;
+  justify-content: center;
+}
+
+.activeLink{
+  color: #fff249;
+}
+
+.greyText{
+  color: #CDCDCD;
+}
+
+.spaceTop{
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.spaceBottom {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+
+/* Hamburger menu:
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+
+#menu a
+{
+  text-decoration: none;
+  color: #FFFFFF;
+  transition: color 0.3s ease;
+}
+
+#menu .activeLink{
+  color: #fff249;
+}
+
+#menu a:hover
+{
+  color: #FFFFFF;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 25px;
+  left: 25px;
+
+  z-index: 1;
+
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #CDCDCD;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #AAAAAA;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 80px;
+  margin: -100px 0 0 -50px;
+  padding: 70px;
+  padding-top: 125px;
+
+  opacity: .9;
+  background: #000000;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 1.5rem;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+
+
+/*
+ *lightbox
+ */
+
+ .lightboxContainer {
+   box-sizing: border-box;
+   margin: 0px;
+   padding: 0px;
+ }
+
+ .row > .column {
+   padding: 5px 8px;
+ }
+
+ .row:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
+
+ .column {
+   float: left;
+   width: 15%;
+ }
+
+ /* The Modal (background) */
+ .modal {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   padding-top: 70px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 95%;
+   overflow: auto;
+   background-color: black;
+ }
+
+ /* Modal Content */
+ .modal-content {
+   position: relative;
+   background-color: #fefefe;
+   margin: auto;
+   padding: 0;
+   width: 90%;
+   max-width: 1200px;
+ }
+
+ /* The Close Button */
+ .close {
+   color: white;
+   position: absolute;
+   top: 10px;
+   right: 25px;
+   font-size: 35px;
+   font-weight: bold;
+ }
+
+ .close:hover,
+ .close:focus {
+   color: #999;
+   text-decoration: none;
+   cursor: pointer;
+ }
+
+ .mySlides {
+   display: none;
+ }
+
+ .mySlides img{
+   width: 100%;
+ }
+
+ .cursor {
+   cursor: pointer;
+ }
+
+ .forCursor{
+   width: 100%
+ }
+
+ /* Next & previous buttons */
+ .prev,
+ .next {
+   cursor: pointer;
+   position: absolute;
+   top: 50%;
+   width: auto;
+   padding: 16px;
+   margin-top: -50px;
+   color: white;
+   font-weight: bold;
+   font-size: 20px;
+   transition: 0.6s ease;
+   border-radius: 0 3px 3px 0;
+   user-select: none;
+   -webkit-user-select: none;
+ }
+
+ /* Position the "next button" to the right */
+ .next {
+   right: 0;
+   border-radius: 3px 0 0 3px;
+ }
+
+ /* On hover, add a black background color with a little bit see-through */
+ .prev:hover,
+ .next:hover {
+   background-color: rgba(0, 0, 0, 0.8);
+ }
+
+ /* Number text (1/3 etc) */
+ .numbertext {
+   color: #f2f2f2;
+   font-size: 12px;
+   padding: 8px 12px;
+   position: absolute;
+   top: 0;
+ }
+
+ .lightboxContainer img {
+   margin-bottom: -5px;
+ }
+
+ .caption-container {
+   text-align: center;
+   background-color: black;
+   padding: 2px 16px;
+   color: white;
+ }
+
+ .demo {
+   opacity: 0.6;
+ }
+
+ .active,
+ .demo:hover {
+   opacity: 1;
+ }
+
+ img.hover-shadow {
+   transition: 0.3s;
+ }
+
+ .hover-shadow:hover {
+   /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+   box-shadow: 0 4px 8px 0 #FFFFFF, 0 6px 20px 0 #FFFFFF;
+ }
+
+/*
+ *video iFrame
+ */
+
+ .h_iframe{
+   position: relative;
+   padding-top: 56%;
+ }
+
+ .h_iframe iframe{
+   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+ }
+
+
+
+/*
+ *Screesize over 700px
+ */
+
+#laptopScreenIndex{
+  display: none;
+}
+
+.laptopScreen{
+  display: none;
+}
+
+@media only screen and (min-width: 700px){
+
+  #menuToggle{
+    display: none;
+  }
+
+  #laptopScreenIndex{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-evenly;
+  }
+
+  #laptopScreenIndex a{
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.8rem;
+    background: #000000;
+    margin: 1rem;
+    padding: .5rem;
+    border-radius: 1rem;
+  }
+
+  #laptopScreenIndex a:hover
+  {
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  .laptopScreen{
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-evenly;
+  }
+
+  .laptopScreen a{
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.8rem;
+    background: #1d1d1f;
+    margin: 1rem;
+    padding: .5rem;
+    border-radius: 1rem;
+  }
+
+  .laptopScreen a:hover
+  {
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  .wrapper{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+
+/*
+ * Intro page
+ */
+
+  .wrapper h1, #firstBrynhild, #goldbright, #odin, #norns, #lastBrynhild{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .paragraph1{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .paragraph2{
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .paragraph3{
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .paragraph4{
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .paragraph5{
+    grid-row-start: 6;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .introImage1{
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+  }
+
+  .introImage2{
+    grid-row-start: 7;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-self: center;
+  }
+
+  .introImage3{
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 2;
+  }
+
+  .introImage4{
+    display: none;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .introImage5{
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 2;
+  }
+
+/*
+ * The songs
+ */
+
+  .firstBrynhild1{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .firstBrynhild2{
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .firstBrynhild3{
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .firstBrynhild4{
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .goldbright1{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .goldbright2{
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .goldbright3{
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .goldbright4{
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .goldbright5{
+    grid-row-start: 6;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .goldbright6{
+    grid-row-start: 7;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .odin1{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .odin2{
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .odin3{
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .norns1{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .norns2{
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .norns3{
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .norns4{
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .lastBrynhild1{
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .lastBrynhild2{
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .lastBrynhild3{
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .lastBrynhild4{
+    grid-row-start: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  /*
+   * credits
+   */
+
+   .wrapperCredits{
+     grid-template-columns: auto auto;
+     grid-column-gap: 2rem;
+   }
+
+   .wrapperCredits h1{
+     grid-column-start: 1;
+     grid-column-end: 3;
+   }
+
+   .sponsorImages{
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-column-start: 1;
+     grid-column-end: 3;
+   }
+
+   .websiteCode{
+     grid-column-start: 1;
+     grid-column-end: 3;
+   }
+
+   .creditsTopHref{
+     grid-row-start: 9;
+   }
+
+ }

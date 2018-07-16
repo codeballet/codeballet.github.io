@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Desire Works</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/jpg" href="images/logoSE.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Caveat:400,700" rel="stylesheet">
+    <link href="css/dw.css" rel="stylesheet">
+    <script src="js/dw.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="galleryTop">
+        <!--    Hamburger Menu: Made by Erik Terwan    -->
+        <!--   24th of November 2015   -->
+        <!--        MIT License        -->
+        <nav>
+          <div id="menuToggle">
+            <!--
+            A fake / hidden checkbox is used as click reciever,
+            so you can use the :checked selector on it.
+            -->
+            <input type="checkbox" />
+            <!--
+            Some spans to act as a hamburger.
+            They are acting like a real hamburger,
+            not that McDonalds stuff.
+            -->
+            <span></span>
+            <span></span>
+            <span></span>
+            <!--
+            Too bad the menu has to be inside of the button
+            but hey, it's pure CSS magic.
+            -->
+            <ul id="menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="intro.html">Introduction</a></li>
+              <li><a href="songs.html">Songs</a></li>
+              <li><a href="credits.html">Credits</a></li>
+              <li><a href="#" class="activeLink">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="laptopScreen">
+            <a href="index.html" class="greyText">Home</a>
+            <a href="intro.html" class="greyText">Introduction</a>
+            <a href="songs.html" class="greyText">Songs</a>
+            <a href="credits.html" class="greyText">Credits</a>
+            <a href="#" class="activeLink">Gallery</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+
+        <section class="wrapper">
+          <h1 class="spaceBottom">Gallery Menu</h1>
+          <ul>
+            <li><a href="#lightboxSection" class="greyText">Images</a></li>
+            <li><a href="#videoSection" class="greyText">Live recording</a></li>
+          </ul>
+        </section>
+
+        <section class="wrapperGallery" id="lightboxSection">
+          <div class="lightboxContainer">
+            <h2 class="spaceBottom">Images</h2>
+
+            <div class="row">
+              <div class="column">
+                <img src="images/posterOnline.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                <img src="images/desirePainting.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                <img src="images/paintingFace1.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                <img src="images/paintingFace2.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+              </div>
+              <div class="column">
+                <img src="images/yggdrasilSketch.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+              </div>
+            </div>
+
+            <div id="myModal" class="modal">
+              <span class="close cursor" onclick="closeModal()">&times;</span>
+              <div class="modal-content">
+
+                <div class="mySlides">
+                  <div class="numbertext">1 / 5</div>
+                  <img src="images/posterOnline.jpg">
+                </div>
+
+                <div class="mySlides">
+                  <div class="numbertext">2 / 5</div>
+                  <img src="images/desirePainting.jpg">
+                </div>
+
+                <div class="mySlides">
+                  <div class="numbertext">3 / 5</div>
+                  <img src="images/paintingFace1.jpg">
+                </div>
+
+                <div class="mySlides">
+                  <div class="numbertext">4 / 5</div>
+                  <img src="images/paintingFace2.jpg">
+                </div>
+
+                <div class="mySlides">
+                  <div class="numbertext">5 / 5</div>
+                  <img src="images/yggdrasilSketch.jpg">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="caption-container">
+                  <p id="caption"></p>
+                </div>
+
+
+                <div class="column">
+                  <img class="demo cursor forCursor" src="images/posterOnline.jpg"
+                        onclick="currentSlide(1)" alt="Desire Works poster">
+                </div>
+                <div class="column">
+                  <img class="demo cursor forCursor" src="images/desirePainting.jpg"
+                        onclick="currentSlide(2)" alt="Desire &copy; Johan Stjernholm">
+                </div>
+                <div class="column">
+                  <img class="demo cursor forCursor" src="images/paintingFace1.jpg"
+                        onclick="currentSlide(3)" alt="Uncertainty &copy; Johan Stjernholm">
+                </div>
+                <div class="column">
+                  <img class="demo cursor forCursor" src="images/paintingFace2.jpg"
+                        onclick="currentSlide(4)" alt="Awakening &copy; Johan Stjernholm">
+                </div>
+                <div class="column">
+                  <img class="demo cursor forCursor" src="images/yggdrasilSketch.jpg"
+                        onclick="currentSlide(5)" alt="Yggdrasil sketch &copy; Johan Stjernholm">
+                </div>
+              </div>
+            </div>
+            <a href="#galleryTop" class="greyText"><p>Return to the menu</p></a>
+          </div>
+        </section>
+
+        <section class="wrapperGallery" id="videoSection">
+          <h2 class="spaceBottom">Live recording</h2>
+          <figure class="h_iframe">
+            <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/i6mIPxoRxLQ"
+                    frameborder="0" allowfullscreen>
+            </iframe>
+          </figure>
+          <a href="#galleryTop" class="greyText"><p>Return to the menu</p></a>
+        </section>
+
+      </main>
+
+      <footer>
+          <div>&copy; 2018 Johan Stjernholm</div>
+      </footer>
+    </div>
+  </body>
+</html>
