@@ -482,28 +482,6 @@ a:hover{
     display: none;
   }
 
-  #laptopScreenIndex{
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    justify-content: space-evenly;
-  }
-
-  #laptopScreenIndex a{
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 1.8rem;
-    background: #000000;
-    margin: 1rem;
-    padding: .5rem;
-    border-radius: 1rem;
-  }
-
-  #laptopScreenIndex a:hover
-  {
-    color: #FFFFFF;
-    font-weight: 700;
-  }
-
   .laptopScreen{
     display: grid;
     grid-template-columns: repeat(5, auto);
@@ -514,7 +492,7 @@ a:hover{
     text-decoration: none;
     font-weight: 400;
     font-size: 1.8rem;
-    background: #1d1d1f;
+    background: #000000;
     margin: 1rem;
     padding: .5rem;
     border-radius: 1rem;
